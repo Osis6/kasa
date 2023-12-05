@@ -33,31 +33,15 @@
 		@include big-radius;
 	  }
 	}
-  
-	&.about-banner {
-	  .banner-text-container {
-		display: none;
-	  }
-  
-	  .aboutBackground {
-		@include flex-center;
-		@include bkgrd($about-background-mobile);
-		width: 100%;
-		height: 130px;
-		@include small-radius;
-		background-size: cover;
-		background-position: center;
-  
-		@media screen and (min-width: $breakpoint-desktop) {
-		  width: 100%;
-		  height: 200px;
-		  @include bkgrd($about-background);
-		  @include big-radius;
-		  background-size: center;
-		}
-	  }
-	}
-  }
-  
-  
+}
+	
+.home-banner {
+    @include bkgrd($banner-background);
+}
+
+.about-banner {
+	@include bkgrd($about-background);
+ }
+ 
+
   

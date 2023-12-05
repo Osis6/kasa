@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <Banner text="Chez vous, partout et ailleurs" customClass="home-banner" />
+      <Banner text="Chez vous, partout et ailleurs" className="home-banner" />
       <div className="cards-container">
         {data.map((appart, id) => (
           <div className="card_logement" key={id}>
