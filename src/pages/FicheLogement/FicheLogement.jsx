@@ -20,13 +20,13 @@ export default function FicheLogement() {
         const picked = logementsData.find((item) => item.id === params.id);
 
         if (!picked) {
-          navigate("/404", { state: { message: "Can't get data" } });
+          navigate("404", { state: { message: "Can't get data" } });
         } else {
           setPickedAppart(picked);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
-        navigate("/404", { state: { message: "Can't get data" } });
+        navigate("404", { state: { message: "Can't get data" } });
       }
     };
 
