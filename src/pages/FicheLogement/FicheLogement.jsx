@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import Carrousel from "../../components/Carrousel/Carrousel";
-import Collapse from "../../components/Collapse/Collapse";
-import Host from "../../components/Host/Host";
-import Rate from "../../components/Rate/Rate";
-import Tag from "../../components/Tag/Tag";
+/** @format */
 
-import logementsData from "../../datas/logements.json";
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import Carrousel from '../../components/Carrousel/Carrousel';
+import Collapse from '../../components/Collapse/Collapse';
+import Host from '../../components/Host/Host';
+import Rate from '../../components/Rate/Rate';
+import Tag from '../../components/Tag/Tag';
+
+import logementsData from '../../datas/logements.json';
 
 export default function FicheLogement() {
   const params = useParams();
@@ -20,13 +22,13 @@ export default function FicheLogement() {
         const picked = logementsData.find((item) => item.id === params.id);
 
         if (!picked) {
-          navigate("404", { state: { message: "Can't get data" } });
+          navigate('404', { state: { message: "Can't get data" } });
         } else {
           setPickedAppart(picked);
         }
       } catch (error) {
-        console.error("Error fetching data:", error);
-        navigate("404", { state: { message: "Can't get data" } });
+        console.error('Error fetching data:', error);
+        navigate('404', { state: { message: "Can't get data" } });
       }
     };
 
@@ -41,44 +43,44 @@ export default function FicheLogement() {
   const tags = pickedAppart.tags;
   const equipments = pickedAppart.equipments;
   const equip = equipments.map((item, index) => (
-    <li key={index} className="equipList">
+    <li key={index} className='equipList'>
       {item}
     </li>
   ));
 
   return (
-    <div key={params.id} className="fiche-container">
+    <div key={params.id} className='fiche-container'>
       <Carrousel slides={slidePics} />
-      <section className="hostInfo-container">
-        <div className="title-tags-container">
-          <div className="title-container redFont">
+      <section className='hostInfo-container'>
+        <div className='title-tags-container'>
+          <div className='title-container redFont'>
             <h1>{pickedAppart.title}</h1>
             <h3>{pickedAppart.location}</h3>
           </div>
-          <div className="tags-container">
+          <div className='tags-container'>
             {tags.map((tag) => (
               <Tag key={tag} tag={tag} />
             ))}
           </div>
         </div>
-        <div className="rate-host-container">
-          <div className="host-container redFont">
+        <div className='rate-host-container'>
+          <div className='host-container redFont'>
             <Host
               hostName={pickedAppart.host.name}
               hostPic={pickedAppart.host.picture}
             />
           </div>
-          <div className="rate-container">
+          <div className='rate-container'>
             <Rate score={pickedAppart.rating} />
           </div>
         </div>
       </section>
-      <div className="collapse-fiche-container">
+      <div className='collapse-fiche-container'>
         <Collapse
-          aboutTitle="Description"
+          aboutTitle='Description'
           aboutText={pickedAppart.description}
         />
-        <Collapse aboutTitle="Équipements" aboutText={<ul>{equip}</ul>} />
+        <Collapse aboutTitle='Équipements' aboutText={<ul>{equip}</ul>} />
       </div>
     </div>
   );

@@ -1,9 +1,11 @@
-import ErrorPage from "../../components/ErrorPage/ErrorPage";
+/** @format */
+
+import ErrorPage from '../../components/ErrorPage/ErrorPage';
 
 export default function Error() {
-	return (
-		<>
-			<ErrorPage />
-		</>
-	);
+  return (
+    <>
+      <ErrorPage />
+    </>
+  );
 }
