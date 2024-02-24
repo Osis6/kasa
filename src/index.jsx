@@ -9,7 +9,7 @@ import RouterApp from './RouterApp';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/kasa'>
       <RouterApp />
     </BrowserRouter>
   </React.StrictMode>
