@@ -1,7 +1,7 @@
 /** @format */
 
-import emptyStar from '../../assets/images/emptyStar.svg';
-import fullStar from '../../assets/images/star-rate.svg';
+import emptyStar from '../../assets/images/emptyStar.png';
+import fullStar from '../../assets/images/star-rate.png';
 
 export default function Rate({ score }) {
   const stars = [1, 2, 3, 4, 5];
