@@ -4,5 +4,4 @@
 
 ## Kasa
 
-
 App de location d’appartements entre particuliers en France.
